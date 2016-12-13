@@ -1,0 +1,10 @@
+FROM aarch64/alpine:edge
+RUN apk --update add py2-pip python2
+
+RUN pip install funker requests
+COPY handler.py .
+COPY sampleresponse.json .
+ENTRYPOINT []
+EXPOSE 9999
+CMD ["python", "./handler.py"]
+
